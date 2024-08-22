@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.title {
+  height: 50px;
+  line-height: 50px;
+  background-color: aliceblue;
+  border-bottom: 2px solid;
+}
+.list {
+  text-align: left;
+  padding-left: 30px;
+  border-bottom: 2px solid;
+  height: 100px;
+  
+}
+span {
+  cursor: pointer;
+}
+.modal {
+  background-color: gainsboro;
+  text-align: left;
+  padding-left: 20px;
+  
+}

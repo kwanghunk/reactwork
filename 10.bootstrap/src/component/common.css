@@ -1,0 +1,34 @@
+footer {
+    padding: 10px;
+    padding-left: 50px;
+    font-size: small;
+    background-color: forestgreen;
+    color: whitesmoke;
+    text-align: left;
+    height: 15vh;
+}
+.Naver-logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+}
+.main_title {
+    color: green;
+    font-weight: bold;
+    font-size: 3.5em;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+.login {
+    margin-right: 20px;
+    margin-top: 40px;
+}
+section {
+    height: 70vh;
+}
