@@ -6,19 +6,19 @@ export {num1, num2};
 
 let pList = [
     {
-        id : 0,
-        title : "vest",
+        id : 1,
+        title : "아침",
         content : "Made in States",
         price : 20000
     },
     {
-        id : 1,
+        id : 2,
         title : "blouse",
         content : "Made in Seoul",
         price : 35000
     },
     {
-        id : 2,
+        id : 3,
         title : "jacket",
         content : "Made in France",
         price : 50000

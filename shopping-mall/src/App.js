@@ -3,19 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav, Row, Col, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import pList from './data/ProductList';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Detail from './pages/Detail';
 import axios from 'axios';
 import Cart from './pages/Cart';
 
-/*
-  ** 장바구니 만들기
-
-  * 외부 라이브러리 사용(Redux)
-  1) 설치 : npm install @reduxjs/toolkit react-redux
-  2) store폴더 만들고, store.js파일 만들기
-  3) index.js <Provider>로 감싸기
-*/
 function App() {
   let [clothes, setClothes] = useState(pList);
   let [clickCount, setClickCount] = useState(2);
@@ -44,7 +36,7 @@ function App() {
                 { 
                   clothes.map((p, i)=>{
                     return(
-                      <PListCol clothes={p} i={i+1} key={i}/>
+                      <PListCol clothes={p} key={i}/>
                     )
                   })
                 }
@@ -66,7 +58,7 @@ function App() {
             }}>서버에서 데이터 가져오기</Button>
           </>
         }/>
-        <Route path='/detail/:index' element={ <Detail clothes={clothes} bg="green" /> } />
+        <Route path='/detail/:pid' element={ <Detail clothes={clothes} bg="green" /> } />
         <Route path='/cart' element={<Cart />} />
         <Route path='*' element={<div>없는 페이지 입니다.</div>} />
       </Routes>
@@ -74,19 +66,19 @@ function App() {
   );
 }
 
-function PListCol(props) {
+function PListCol({clothes}) {
   const navigate = useNavigate();
 
   const goDetail = () => {
-    navigate(`./detail/${props.i-1}`);
+    navigate(`./detail/${clothes.id}`);
   };
 
   return (
     <>
       <Col md={4} onClick={goDetail}>
-        <img src={`${process.env.PUBLIC_URL}/img/clothes${props.i}.png`} />
-        <h4>{props.clothes.title}</h4>
-        <p>{props.clothes.price}</p>
+        <img src={`${process.env.PUBLIC_URL}/img/clothes${clothes.id}.png`} />
+        <h4>{clothes.title}</h4>
+        <p>{clothes.price}</p>
       </Col>
     </>
   )
